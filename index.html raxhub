@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rax Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(145deg, #0d0d0d 60%, #1a0000);
+      background: url('https://cdn.discordapp.com/attachments/1359944336946630767/1360754404873080944/IMG_8210.gif') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
       min-height: 100vh;
       display: flex;
@@ -64,25 +65,6 @@
       box-shadow: 0 0 25px #ff0000, 0 0 60px #ff1a1a;
     }
 
-    .lightning {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://i.imgur.com/B4JNjPb.gif');
-      background-size: cover;
-      opacity: 0.1;
-      pointer-events: none;
-      mix-blend-mode: screen;
-      animation: flicker 3s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 0.1; }
-      50% { opacity: 0.3; }
-    }
-
     .card {
       z-index: 1;
       background: rgba(0, 0, 0, 0.7);
@@ -98,6 +80,8 @@
       border-radius: 50%;
       margin-bottom: 20px;
       animation: pulse 2s infinite ease-in-out;
+      background: url('https://cdn.discordapp.com/attachments/1359944336946630767/1360754404873080944/IMG_8210.gif') no-repeat center center;
+      background-size: cover;
     }
 
     @keyframes pulse {
@@ -113,25 +97,27 @@
   </style>
 </head>
 <body>
-
-  <div class="lightning"></div>
-
-  <div class="card">
-    <img class="logo" src="https://i.imgur.com/XHZ6t0W.png" alt="Rax Hub Logo">
-    <h1>Rax Hub</h1>
-    <p>Welcome to Rax Hub! Join our community for exciting giveaways, exclusive events, and much more. We’re charging up with electric energy and thunderous fun!</p>
+  <main class="card">
+    <div class="logo"></div>
+    <header>
+      <h1>Rax Hub</h1>
+    </header>
+    <p>Welcome to Rax Hub! We got undetected Valorant cheats featuring aim assist, wallhacks, unlock all and more. Dominate your games safely and efficiently!</p>
     <a class="button" href="https://discord.gg/cfUh5wVh" target="_blank" onclick="playSound()">Join Our Discord</a>
-  </div>
+  </main>
 
   <audio id="thunder-sound" src="https://www.soundjay.com/nature/sounds/thunder-1.mp3" preload="auto"></audio>
 
   <script>
     function playSound() {
       const sound = document.getElementById('thunder-sound');
-      sound.volume = 0.5;
-      sound.play();
+      try {
+        sound.volume = 0.5;
+        sound.play();
+      } catch (e) {
+        console.error('Audio playback failed:', e);
+      }
     }
   </script>
-
 </body>
 </html>
